@@ -1,0 +1,24 @@
+table {
+  font-family: Georgia,Times,serif;
+  border-collapse: collapse;
+  max-width:420;
+  width: 95%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+    background-color: #cccccc;
+}
+
+tr:nth-child(odd) {
+  background-color: #ebebeb;
+}
+
+tr:hover {
+    background-color: #c4d9ff;
+}
