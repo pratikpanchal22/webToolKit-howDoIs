@@ -1,0 +1,108 @@
+<html>
+  <head>
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Dark Mode</title>
+    <meta id="meta" name="viewport"
+    content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' type='text/css' href='darkMode.css'>
+    <script src="darkMode.js"></script>
+
+  </head>
+
+  <body bgcolor=white onload="performInitializations()">
+
+  <center>
+
+  <h1><div id='header1'></div></h1>
+  <h2><div id='timeDisplay'></div></h2>
+  <hr>
+
+<table style="max-width:420" style="width:95%">
+
+  <tr>
+    <th colspan=2>
+    <h2><div id='componentDiv'></div></h2>
+    </th>
+  </tr>
+
+  <tr>
+    <th>
+      <a id="buttonA1" href="http://192.168.1.60/set?d=1&s=0&i=2930304" class="offButton" target='myIframe'>Blue</br>button</a>
+    </th>
+
+    <th>
+      <a id="buttonA2" href="http://192.168.1.60/set?d=1&s=1&i=2930304" class="onButton" target='myIframe'>Red</br>button</a>
+    </th>
+  </tr>
+
+  <tr>
+    <th><br/></th>
+  </tr>
+  
+  <tr>
+     <th colspan=2>
+          <div>
+          <p><span id="slider60Value"></span></p>
+          </div>
+     </th>
+  </tr>
+  
+
+  <tr>
+     <th colspan=2>
+        <div class="slidecontainer">
+          <input type="range" min="0" max="255" value="0" class="slider" id="myRange60">
+        </div>
+     </th>
+  </tr>
+
+  <tr>
+    <th><hr/><br/></th>
+    <th><hr/><br/></th>
+  </tr>
+
+
+  <tr>
+    <th colspan="2">
+      <iframe id='loggerIframe' name='myIframe' style="width:370px"></iframe>
+    </th>
+  </tr>
+
+
+  <tr>
+    <th><br/></th>
+  </tr>
+
+
+  <tr>
+    <td colspan="2"><center>
+      <a id="displayBgButton" class="dispButton" onclick="toggleBackgroundColor()">Display: Change to Night Mode</a>
+    </center></td>
+  </tr>
+
+</table
+
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+
+  <hr>
+
+  </center>
+
+
+
+  </body>
+</html>
