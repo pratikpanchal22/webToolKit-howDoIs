@@ -52,10 +52,11 @@ function autoBgFunction() {
     toHour = Math.trunc((timeoutMs/1000)/60/60);
     toMinute = Math.trunc(((timeoutMs/1000)/60)%60);
     toSeconds = Math.trunc((timeoutMs/1000)%60);
-    console.log("Triggering next display change "+"for "+autoMode+ " in: " + toHour +":"+ toMinute +":"+ toSeconds);
-    writeToIframe("Triggering next display change "+"for "+autoMode+ " in: " + toHour +" hour(s), "+ toMinute +" minute(s), and "+ toSeconds + " second(s)");
 
-    setTimeout(function(){timeoutTriggered()}, timeoutMs);
+    var timerId = setTimeout(function(){timeoutTriggered()}, timeoutMs);
+
+    console.log("Timer "+timerId+" set for next display change "+"for "+autoMode+ " in: " + toHour +":"+ toMinute +":"+ toSeconds);
+    writeToIframe("Timer "+timerId+" set for next display change "+"for "+autoMode+ " in: " + toHour +" hour(s), "+ toMinute +" minute(s), and "+ toSeconds + " second(s)");
 }
 
 function timeoutTriggered() {
@@ -95,13 +96,15 @@ function performInitializations() {
 }
 
 function writeToIframe(message){
+    /*
     var doc = document.getElementById('loggerIframe').contentWindow.document;
-    
-    //console.log(document.getElementById('loggerIframe').contentWindow.document.body.innerHTML);
-    var currentContent = document.getElementById('loggerIframe').contentWindow.document.body.innerHTML;
     doc.open();
     doc.write(getCurrentMs() + ": " + message + "<br>" + currentContent);
     doc.close();
+    */
+
+    var currentContent = document.getElementById('loggerIframe').contentWindow.document.body.innerHTML;
+    document.getElementById('loggerIframe').contentWindow.document.body.innerHTML = getFormattedCurrentTs() + ": " + message + "<br>" + currentContent;
 }
 
 function getCurrentMs(){
@@ -123,8 +126,8 @@ function toggleBackgroundColor() {
         buttonColor = 'darkred';
         bgColor = 'black';
         textColor = 'white';
-        buttonText = "Change display to Day Mode";
-        logMsg = "Display set to NIGHT Mode";
+        buttonText = "Change display to bright Mode";
+        logMsg = "Display set to DARK Mode";
     }
     // Day Mode Settings
     else {
@@ -133,8 +136,8 @@ function toggleBackgroundColor() {
         buttonColor = 'dimgray';
         bgColor = 'white';
         textColor = 'black';
-        buttonText = "Change display to Night Mode";
-        logMsg = "Display set to DAY Mode";
+        buttonText = "Change display to DARK Mode";
+        logMsg = "Display set to bright Mode";
     }
 
     document.getElementById('buttonA1').style.backgroundColor = offButtonColor;          
@@ -192,12 +195,22 @@ function startTime() {
     day[6] = "Saturday";
     var da = day[today.getDay()];
 
-
     document.getElementById('timeDisplay').innerHTML =
     da +", " + mo + " " + today.getDate() + ", " + h + ":" + m + ":" + s;
-    var t = setTimeout(startTime, 500);
+    var t = setTimeout(startTime, 1000-today.getMilliseconds());
 }
 function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
-}   
+} 
+
+function getFormattedCurrentTs(){
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    ms = today.getMilliseconds();
+    return (h + ":" + m + ":" + s +"."+ms);
+}
