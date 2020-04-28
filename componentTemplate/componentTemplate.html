@@ -6,7 +6,7 @@
     <title>IO Components</title>
     <meta name="description" content="IO Components">
     <meta name="author" content="Pratik Panchal">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/styles.css?v=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -33,6 +33,15 @@
         <form class="formTable" id="idFormAddSym">
 
             <p class="pTableRow">
+                <label class="labelTableCell" for="idLandscape">Landscape</label>
+                <select id="idLandscape" class="inputTableCellWidth100" name="Landscape">
+                    <option value="RMNP">Rocky Mountain National Park, Colorado</option>
+                    <option value="YNP">Yellowstone National Park, Wyoming</option>
+                </select>
+            </p>
+            <br><br>
+
+            <p class="pTableRow">
                 <label class="labelTableCell" for="idTransactionDate">Enable continuous playback</label>
                 <!--input class="inputTableCellWidth100" type="date" id="idTransactionDate" name="TransactionDate"-->
                 <label class="switch">
@@ -40,11 +49,29 @@
                     <span class="slider round"></span>
                 </label>
             </p>
-            
+
             <p class="pTableRow">
                 <label class="subLabelTableCell" for="idTimeout">Minutes to stop playing after</label>
                 <input class="inputTableCellWidth100" type="number" id="idTimeout" name="Timeout" min="1" max="999999">
             </p>
+            <p class="pTableRow">
+                <label class="subLabelTableCell" for="idAmbience1">Upstage Ambience 1</label>
+                <select id="idAmbience1" class="inputTableCellWidth100" name="Ambience1">
+                    <option value="a0">None</option>
+                    <option value="a1">Ambience1</option>
+                    <option value="a2">Ambience2</option>
+                </select>
+            </p>
+            <p class="pTableRow">
+                <label class="subLabelTableCell" for="idAmbience2">Upstage Ambience 2</label>
+                <select id="idAmbience2" class="inputTableCellWidth100" name="Ambience2">
+                    <option value="a0">None</option>
+                    <option value="a1">Ambience1</option>
+                    <option value="a2">Ambience2</option>
+                </select>
+            </p>
+            <br><br>
+
             <br><br>
 
             <p class="pTableRow">
@@ -55,7 +82,7 @@
                     <span class="slider round"></span>
                 </label>
             </p>
-            
+
             <p class="pTableRow">
                 <label class="subLabelTableCell" for="idMinutesToWait">Minutes to wait in between</label>
                 <input class="inputTableCellWidth100" type="number" id="idMinutesToWait" name="Timeout" min="1" max="999999">
@@ -70,7 +97,7 @@
                     <span class="slider round"></span>
                 </label>
             </p>
-            
+
             <p class="pTableRow">
                 <label class="subLabelTableCell" for="idNumberOfSounds">Maximum number of birds in symphony</label>
                 <input class="inputTableCellWidth100" type="number" id="idNumberOfSounds" name="Timeout" min="1" max="999999">
@@ -92,7 +119,7 @@
                     <span class="slider round"></span>
                 </label>
             </p>
-            
+
             <p class="pTableRow">
                 <label class="subLabelTableCell" for="idStartTime">Start time</label>
                 <input class="inputTableCellWidth100" type="time" id="idStartTime" name="Timeout" min="1" max="999999">
@@ -101,6 +128,14 @@
                 <label class="subLabelTableCell" for="idEndTime">End time</label>
                 <input class="inputTableCellWidth100" type="time" id="idEndTime" name="Timeout" min="1" max="999999">
             </p>
+            <br><br>
+
+            <p class="pTableRow">
+                <label class="subLabelTableCell">Volume</label>
+            </p>
+            <center>
+                <input style="width: 90%;" type="range" min="1" max="100" value="50">
+            </center>
             <br><br>
 
 

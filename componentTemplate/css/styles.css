@@ -15,6 +15,11 @@
     display: table-row;
 }
 
+.pTableRow100 {
+    display: inline-block;
+    width: 100%;
+}
+
 .labelTableCell {
     display: table-cell;
     width: 70%;
@@ -29,6 +34,7 @@
     display: table-cell;
     width: 60%;
     /*padding: 2%;*/
+    padding-top: 8px;
     height: 34px;
     vertical-align: middle;
     float: left;
@@ -48,6 +54,7 @@
     height: 30px;
     float: right;
 }
+
 
 /*  SWITCH / TOGGLE */
 
@@ -94,6 +101,7 @@ input:checked+.slider {
     background-color: rgb(255, 123, 0);
 }
 
+
 /*input:focus+.slider {
     box-shadow: 0 0 1px #2196F3;
 }*/
@@ -104,7 +112,9 @@ input:checked+.slider:before {
     transform: translateX(26px);
 }
 
+
 /* Rounded sliders */
+
 .slider.round {
     border-radius: 34px;
 }
