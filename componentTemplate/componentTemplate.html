@@ -1,0 +1,114 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>IO Components</title>
+    <meta name="description" content="IO Components">
+    <meta name="author" content="Pratik Panchal">
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <center>
+        <h1>
+            <div id='header1'>IO Components</div>
+        </h1>
+        <h4>
+            <p id="idSymbolDesc"></p>
+        </h4>
+        <hr>
+    </center>
+
+    <div class="classCenterDiv">
+        <center>
+            <h2>Settings</h2>
+            <hr>
+            <br>
+        </center>
+
+        <form class="formTable" id="idFormAddSym">
+
+            <p class="pTableRow">
+                <label class="labelTableCell" for="idTransactionDate">Enable continuous playback</label>
+                <!--input class="inputTableCellWidth100" type="date" id="idTransactionDate" name="TransactionDate"-->
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </p>
+            
+            <p class="pTableRow">
+                <label class="subLabelTableCell" for="idTimeout">Minutes to stop playing after</label>
+                <input class="inputTableCellWidth100" type="number" id="idTimeout" name="Timeout" min="1" max="999999">
+            </p>
+            <br><br>
+
+            <p class="pTableRow">
+                <label class="labelTableCell" for="idLabelMotion">Enable motion based trigger</label>
+                <!--input class="inputTableCellWidth100" type="date" id="idTransactionDate" name="TransactionDate"-->
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </p>
+            
+            <p class="pTableRow">
+                <label class="subLabelTableCell" for="idMinutesToWait">Minutes to wait in between</label>
+                <input class="inputTableCellWidth100" type="number" id="idMinutesToWait" name="Timeout" min="1" max="999999">
+            </p>
+            <br><br>
+
+            <p class="pTableRow">
+                <label class="labelTableCell" for="idLabelMotion">Enable bird symphony</label>
+                <!--input class="inputTableCellWidth100" type="date" id="idTransactionDate" name="TransactionDate"-->
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </p>
+            
+            <p class="pTableRow">
+                <label class="subLabelTableCell" for="idNumberOfSounds">Maximum number of birds in symphony</label>
+                <input class="inputTableCellWidth100" type="number" id="idNumberOfSounds" name="Timeout" min="1" max="999999">
+            </p>
+            <p class="pTableRow">
+                <label class="subLabelTableCell" for="idNumberOfSounds">Limit to same bird type</label>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </p>
+            <br><br>
+
+            <p class="pTableRow">
+                <label class="labelTableCell" for="idLabelMotion">Configure silent period</label>
+                <!--input class="inputTableCellWidth100" type="date" id="idTransactionDate" name="TransactionDate"-->
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </p>
+            
+            <p class="pTableRow">
+                <label class="subLabelTableCell" for="idStartTime">Start time</label>
+                <input class="inputTableCellWidth100" type="time" id="idStartTime" name="Timeout" min="1" max="999999">
+            </p>
+            <p class="pTableRow">
+                <label class="subLabelTableCell" for="idEndTime">End time</label>
+                <input class="inputTableCellWidth100" type="time" id="idEndTime" name="Timeout" min="1" max="999999">
+            </p>
+            <br><br>
+
+
+
+
+        </form>
+    </div>
+
+
+    <script src="js/scripts.js"></script>
+</body>
