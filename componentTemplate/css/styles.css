@@ -1,66 +1,137 @@
-.classCenterDiv {
-    max-width: 480px;
-    /*margin: auto;*/
+* {
+    box-sizing: border-box;
+}
+
+input[type=text], input[type=time], input[type=checkbox], input[type=number], select, textarea {
     width: 100%;
-    /*border: 1px solid rgb(44, 37, 37);*/
-    padding: 5%px;
+    margin: 6px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-width: 60px;
+    /*resize: vertical;*/
 }
 
-.formTable {
-    display: table;
-    width: 100%;
-}
-
-.pTableRow {
-    display: table-row;
-}
-
-.pTableRow100 {
-    display: inline-block;
-    width: 100%;
-}
-
-.labelTableCell {
-    display: table-cell;
-    width: 70%;
-    /*padding: 2%;*/
-    padding-top: 8px;
-    height: 34px;
-    vertical-align: middle;
-    float: left;
-}
-
-.subLabelTableCell {
-    display: table-cell;
-    width: 60%;
-    /*padding: 2%;*/
-    padding-top: 8px;
-    height: 34px;
-    vertical-align: middle;
-    float: left;
-    margin-left: 20px;
-}
-
-.inputTableCell {
-    display: table-cell;
-    width: 50%;
-    padding-top: 8px;
-}
-
-.inputTableCellWidth100 {
-    display: table-cell;
-    width: 30%;
-    /*padding: 5%;*/
-    height: 30px;
+input[type=submit] {
+    background-color: rgb(44, 65, 250);
+    color: white;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
     float: right;
 }
 
+input[type=submit]:hover {
+    background-color: #5768ff;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.majorLabel {
+    font-weight: bold;
+}
+
+.container {
+    position: relative;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.subContent {
+    margin-top: 6px;
+    margin-bottom: 24px;
+    padding-left: 25px;
+    display: none;
+}
+
+.row {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.col-left {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-left-fc {
+    float: left;
+    width: fit-content;
+    /*margin-top: 6px;*/
+    padding-top: 6px;
+    top: 50%;
+    bottom: 50;
+}
+
+.col-left-indented {
+    float: left;
+    width: fit-content;
+    max-width: 65%;
+    margin-top: 6px;
+    /*padding-bottom: 12px;*/
+    /*padding-left: 25px;*/
+    top: 50%;
+    bottom: 50%;
+}
+
+.col-left-indented-2lines {
+    float: left;
+    width: fit-content;
+    height: 48px;
+    max-width: 65%;
+    /*padding-left: 25px;*/
+    top: 50%;
+    bottom: 50%;
+}
+
+.col-right {
+    float: right;
+    width: 75%;
+    margin-top: 6px;
+}
+
+.col-right-narrow {
+    /*position: relative;*/
+    float: right;
+    /*width: 35%;*/
+    width: fit-content;
+    max-width: 35%;
+    /*margin-top: 6px;*/
+    padding-top: 6px;
+    top: 50%;
+    bottom: 50%;
+}
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 600px) {
+    .col-left, .col-right, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+/*#####################################*/
 
 /*  SWITCH / TOGGLE */
 
 .switch {
     position: relative;
-    display: table-cell;
+    /*display: table-cell;*/
     width: 60px;
     height: 34px;
     /*display: table-cell;*/
@@ -101,7 +172,6 @@ input:checked+.slider {
     background-color: rgb(255, 123, 0);
 }
 
-
 /*input:focus+.slider {
     box-shadow: 0 0 1px #2196F3;
 }*/
@@ -111,7 +181,6 @@ input:checked+.slider:before {
     -ms-transform: translateX(26px);
     transform: translateX(26px);
 }
-
 
 /* Rounded sliders */
 
