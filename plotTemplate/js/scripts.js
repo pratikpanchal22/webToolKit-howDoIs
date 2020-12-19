@@ -66,17 +66,88 @@ function plot3() {
 
     var data = [trace1, trace2, trace3];
 
+    var selectorOptions = {
+        buttons: [{
+            step: 'minute',
+            stepmode: 'backward',
+            count: 1,
+            label: '1 Minute'
+        }, {
+            step: 'minute',
+            stepmode: 'backward',
+            count: 2,
+            label: '2 Minutes'
+        },{
+            step: 'minute',
+            stepmode: 'backward',
+            count: 5,
+            label: '5 Minutes'
+        }, {
+            step: 'minute',
+            stepmode: 'backward',
+            count: 15,
+            label: '15 Minutes'
+        }, {
+            step: 'hour',
+            stepmode: 'backward',
+            count: 1,
+            label: '1 Hour'
+        }, {
+            step: 'hour',
+            stepmode: 'backward',
+            count: 12,
+            label: '12 Hours'
+        }, {
+            step: 'day',
+            stepmode: 'backward',
+            count: 1,
+            label: '1 Day'
+        }, {
+            step: 'day',
+            stepmode: 'backward',
+            count: 1,
+            label: '7 Day'
+        },{
+            step: 'month',
+            stepmode: 'backward',
+            count: 1,
+            label: '1m'
+        }, {
+            step: 'month',
+            stepmode: 'backward',
+            count: 6,
+            label: '6m'
+        }, {
+            step: 'year',
+            stepmode: 'todate',
+            count: 1,
+            label: 'YTD'
+        }, {
+            step: 'year',
+            stepmode: 'backward',
+            count: 1,
+            label: '1y'
+        }, {
+            step: 'all',
+        }],
+    };
+
     var layout = {
         title: 'Real time plot with maximum x-axis points and time series on x axis',
         showlegend: true,
         legend: {
             "orientation" : "h"
+        },
+        xaxis: {
+            rangeselector: selectorOptions,
+            rangeslider: {}
         }
     };
 
     Plotly.newPlot(tester3, data, layout);
 
     setInterval(function () {
+
         d = getTimeStampedDataArray();
         console.log("********************************");
         for(var i=0; i<d.length; i++){
@@ -87,9 +158,9 @@ function plot3() {
                     y: [[d[i].y]]
                 },
                 [d[i].id],
-                25);
+                100);
         }        
-    }, 10000)
+    }, 1000)
 }
 
 function getTimeStampedDataArray() {
