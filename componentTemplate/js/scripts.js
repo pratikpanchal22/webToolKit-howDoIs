@@ -66,6 +66,31 @@ function initializations() {
     slide.oninput = function () {
         VolVal.innerHTML = this.value + "%";
     }
+
+    $('#idUserSpace').bind('input propertychange', function() {
+        console.log("User input character count: " + this.value.length);
+        $("#idSendButton").hide();
+        //$('#idSendButton').prop('disabled', true);
+  
+        if(this.value.length < 120){
+          $("#idSendButton").show();
+          //$('#idSendButton').prop('disabled', false);
+        }
+
+        if(this.value.length < 80*120/100){
+            $("#idValidationMsg").text("");
+        }
+        else if(this.value.length > (8*12) && this.value.length <= 120){
+            console.log("User input character count 80% threshold crossed:" + this.value.length/120 * 100 + "%");
+            $("#idValidationMsg").html("<i>Heads up! You are approaching character limit of 120. To help you better, please keep the character count less than 120 characters.</i>");
+        }
+        else if(this.value.length > 120){
+            $("#idValidationMsg").html("<i><b>You have exceeded the character limit. To help you better, please keep the character count less than 120 characters.</b></i>");
+        }
+        else {
+        
+        }
+    });
    
 
 
